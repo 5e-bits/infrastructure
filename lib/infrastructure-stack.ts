@@ -124,14 +124,5 @@ export class InfrastructureStack extends cdk.Stack {
         },
       }
     );
-
-    // Add CloudFront A record to Route53
-    new route53.ARecord(this, "CloudFrontARecord", {
-      zone: hostedZone,
-      target: route53.RecordTarget.fromAlias(
-        new targets.CloudFrontTarget(distribution)
-      ),
-      recordName: "dnd5eapi.co",
-    });
   }
 }
