@@ -51,14 +51,14 @@ export class InfrastructureStack extends cdk.Stack {
     // Define the Response Headers Policy to match the existing configuration
     const customResponseHeadersPolicy = new cloudfront.ResponseHeadersPolicy(
       this,
-      "DndResponseHeadersPolicy",
+      "Managed-CORS-With-Preflight",
       {
         responseHeadersPolicyName: "DndAppResponseHeadersPolicy",
         comment:
-          "Allows all origins for CORS requests, including preflight requests - matches existing policy",
+          "Allows all origins for CORS requests, including preflight requests",
         corsBehavior: {
           accessControlAllowOrigins: ["*"],
-          accessControlAllowHeaders: [],
+          accessControlAllowHeaders: ["*"],
           accessControlAllowMethods: [
             "GET",
             "HEAD",
