@@ -133,15 +133,5 @@ export class InfrastructureStack extends cdk.Stack {
       ),
       recordName: "dnd5eapi.co",
     });
-
-    // // Manage CNAME for www.dnd5eapi.co using CfnRecordSet to allow overwrite
-    // new route53.CfnRecordSet(this, 'WwwCnameRecord', {
-    //   hostedZoneId: hostedZone.hostedZoneId, // Get the ID from the IHostedZone reference
-    //   name: 'www.dnd5eapi.co.', // Must be fully qualified domain name
-    //   type: 'CNAME',
-    //   ttl: '300', // TTL as a string for CfnRecordSet
-    //   resourceRecords: ['quantitative-beyond-3tuibvnjwi2r5yy0ez9dcbvd.herokudns.com.'], // Value must also be FQDN if applicable
-    //   // allowOverwrite: true, // This property does not exist on CfnRecordSetProps
-    // });
   }
 }
