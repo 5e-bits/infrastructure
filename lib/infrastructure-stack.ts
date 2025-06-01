@@ -93,8 +93,8 @@ export class InfrastructureStack extends cdk.Stack {
       queryStringBehavior:
         cloudfront.CacheQueryStringBehavior.allowList("nope"),
       minTtl: cdk.Duration.seconds(0),
-      defaultTtl: cdk.Duration.seconds(86400),
-      maxTtl: cdk.Duration.seconds(31536000),
+      defaultTtl: cdk.Duration.days(1),
+      maxTtl: cdk.Duration.days(365),
       enableAcceptEncodingGzip: false,
       enableAcceptEncodingBrotli: false,
     });
